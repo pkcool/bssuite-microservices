@@ -1,0 +1,42 @@
+
+entity Customer {
+    code String required,
+    name String,
+    tradingName String,
+    abn String,
+}
+
+entity CustomerCategory {
+    code String required minlength(2),
+    name String,
+    tradingName String
+}
+
+enum CustomerAgeingMethod {
+    MONTH, TERMS, DUEDATES
+}
+
+enum CustomerAccountType {
+    STANDARD, INTERNAL, CASH, CREDITCARD
+}
+
+enum CreditCardType {
+    VISA, AMX, MASTER
+}
+
+enum CustomerInvoiceDeliveryMethod {
+    EMAIL, POST, FAX, PRINT
+}
+
+enum CustomerStatementDeliveryMethod {
+    EMAIL, POST, FAX, PRINT
+}
+
+paginate Customer, CustomerCategory with pagination
+
+dto * with mapstruct
+
+service * with serviceClass
+
+microservice Customer, CustomerCategory with customerService
+	
