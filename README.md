@@ -31,6 +31,11 @@ First, generate all apps from their _.yo-rc.json_.
 Then, generate samples entities from the _entities.jh_ JDL file in each app's directory
 
     ./setup-entities.sh
+    
+Then, generate entities for front end gateway. This step needs to be done manually.
+    "cd gateway" & generate entities one by one (check the command in the below script).
+
+    ./setup-gateway-entities.sh
 
 Finally, build apps and generate docker images for them.  `mvn package docker:build -DskipTests=true`
 
@@ -39,12 +44,21 @@ Finally, build apps and generate docker images for them.  `mvn package docker:bu
 This script runs `mvn package docker:build -DskipTests=true` for all apps, the `app/src/main/docker/Dockerfile` is used by maven-docker plugin to build the docker image.
 
 Generate a Docker-compose file:
+
     mkdir docker-compose
     cd docker-compose
 
     yo jhipster:docker-compose
 
 And answer the questions.
+
+To run all apps:
+    
+    docker-compose up
+   
+To shut down all apps:
+
+    docker-compose down
 
 
 ### Run everything
