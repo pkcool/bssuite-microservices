@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "4.0.7",
+    "jhipsterVersion": "4.0.8",
     "baseName": "supplierService",
     "packageName": "com.bssuite",
     "packageFolder": "com/bssuite",
