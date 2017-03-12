@@ -8,9 +8,7 @@ apps=("gateway"
 "customerService" 
 "supplierService" 
 "productService" 
-"invoiceService" 
-"quoteService" 
-"purchaseOrderService")
+"invoiceService" )
 for app in "${apps[@]}";
 do
     ( cd $app && rm -r !(entities.jh|.yo-rc.json|.gitignore) )
