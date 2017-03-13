@@ -1,0 +1,18 @@
+package com.bssuite.cucumber.stepdefs;
+
+import com.bssuite.BssuiteGatewayApp;
+
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.web.servlet.ResultActions;
+
+import org.springframework.boot.test.context.SpringBootTest;
+
+@WebAppConfiguration
+@SpringBootTest
+@ContextConfiguration(classes = BssuiteGatewayApp.class)
+public abstract class StepDefs {
+
+    protected ResultActions actions;
+
+}
