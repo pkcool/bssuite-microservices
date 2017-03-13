@@ -115,6 +115,17 @@ Run cleanup script
 
     ./cleanup.sh
 
+## Deploy to Heroku
+- Download Heroku CLI & set up account
+- Deploy registry: https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry
+- Deploy gateway and services one by one, e.g.
+
+    cd gateway
+    yo jhipster:heroku (enter registry url in the form of https://[appname].herokuapp.com
+    heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com" (replace with registry password & registry app name
+    
+
+
 ## TODO
 - Switch between dev and prod ~~with an environment variable~~ different compose files.
 - Boot up the database by extending src/main/docker/prod.yml
