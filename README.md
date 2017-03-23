@@ -118,11 +118,22 @@ Run cleanup script
 ## Deploy to Heroku
 - Download Heroku CLI & set up account
 - Deploy registry: https://dashboard.heroku.com/new?&template=https%3A%2F%2Fgithub.com%2Fjhipster%2Fjhipster-registry
-- Deploy gateway and services one by one, e.g.
+    (registry url is to be used when deploying gateways and services in next steps)
+- Deploy gateway and services one by one: 
 
-    cd gateway
-    yo jhipster:heroku (enter registry url in the form of https://[appname].herokuapp.com
-    heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com" (replace with registry password & registry app name
+    `cd gateway`
+    
+    `yo jhipster:heroku` (enter registry url in the form of https://[appname].herokuapp.com)
+    
+    `heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com"` (replace with registry password & registry app name
+    
+   Do the same for all the services, i.e.
+   
+   `cd customerService`
+       
+   `yo jhipster:heroku`
+   
+   `heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com"`
     
 
 
