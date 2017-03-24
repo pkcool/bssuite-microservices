@@ -8,6 +8,7 @@ import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 import { Customer } from './customer.model';
 import { CustomerPopupService } from './customer-popup.service';
 import { CustomerService } from './customer.service';
+
 @Component({
     selector: 'jhi-customer-dialog',
     templateUrl: './customer-dialog.component.html'

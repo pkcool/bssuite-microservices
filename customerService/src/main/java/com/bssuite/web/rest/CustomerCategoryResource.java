@@ -88,7 +88,6 @@ public class CustomerCategoryResource {
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of customerCategories in body
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @GetMapping("/customer-categories")
     @Timed

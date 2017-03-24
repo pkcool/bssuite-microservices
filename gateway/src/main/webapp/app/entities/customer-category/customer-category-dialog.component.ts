@@ -8,6 +8,7 @@ import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 import { CustomerCategory } from './customer-category.model';
 import { CustomerCategoryPopupService } from './customer-category-popup.service';
 import { CustomerCategoryService } from './customer-category.service';
+
 @Component({
     selector: 'jhi-customer-category-dialog',
     templateUrl: './customer-category-dialog.component.html'
