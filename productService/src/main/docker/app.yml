@@ -1,0 +1,19 @@
+version: '2'
+services:
+    productservice-app:
+        image: productservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/productService
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+    productservice-postgresql:
+        extends:
+            file: postgresql.yml
+            service: productservice-postgresql
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+        environment:
+            - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/docker-config/

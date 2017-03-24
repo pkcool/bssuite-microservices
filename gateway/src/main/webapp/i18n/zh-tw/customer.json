@@ -1,0 +1,28 @@
+{
+    "bssuiteGatewayApp": {
+        "customer" : {
+            "home": {
+                "title": "Customers",
+                "createLabel": "建立一筆新的 Customer",
+                "createOrEditLabel": "建立或編輯 Customer"
+            },
+            "delete": {
+                "question": "您確定要刪除 Customer {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Customer"
+            },
+            "code": "Code",
+            "name": "Name",
+            "tradingName": "Trading Name",
+            "abn": "Abn"
+        }
+    },
+    "customerServiceApp": {
+        "customer" : {
+            "created": "新的 Customer 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Customer 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Customer 刪除成功"
+        }
+    }
+}

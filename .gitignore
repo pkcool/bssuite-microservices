@@ -5,3 +5,9 @@
 
 /build/
 /target/
+
+
+# Heroku related files
+**/application-heroku.yml
+**/bootstrap-heroku.yml
+**/Procfile

@@ -1,0 +1,95 @@
+version: '2'
+services:
+    customerservice-app:
+        image: customerservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://customerservice-postgresql:5432/customerService
+            - JHIPSTER_SLEEP=10
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    customerservice-postgresql:
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=customerService
+            - POSTGRES_PASSWORD=
+    
+    bssuitegateway-app:
+        image: bssuitegateway
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://bssuitegateway-postgresql:5432/bssuiteGateway
+            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=bssuitegateway-cassandra
+            - JHIPSTER_SLEEP=30
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+        ports:
+            - 8080:8080
+    bssuitegateway-postgresql:
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=bssuiteGateway
+            - POSTGRES_PASSWORD=
+    
+    invoiceservice-app:
+        image: invoiceservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:mysql://invoiceservice-mysql:3306/invoiceservice?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    invoiceservice-mysql:
+        image: mysql:5.7.13
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=invoiceservice
+        command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+    
+    productservice-app:
+        image: productservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/productService
+            - JHIPSTER_SLEEP=10
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    productservice-postgresql:
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=productService
+            - POSTGRES_PASSWORD=
+    
+    supplierservice-app:
+        image: supplierservice
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://supplierservice-postgresql:5432/supplierService
+            - JHIPSTER_SLEEP=10
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+    supplierservice-postgresql:
+        image: postgres:9.5.4
+        environment:
+            - POSTGRES_USER=supplierService
+            - POSTGRES_PASSWORD=
+    
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+
+    jhipster-elasticsearch:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-elasticsearch
+    jhipster-logstash:
+        extends:
+          file: jhipster-console.yml
+          service: jhipster-logstash
+    jhipster-console:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-console
+

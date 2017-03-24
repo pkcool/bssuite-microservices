@@ -1,0 +1,27 @@
+{
+    "bssuiteGatewayApp": {
+        "customerCategory" : {
+            "home": {
+                "title": "Customer Categories",
+                "createLabel": "建立一筆新的 Customer Category",
+                "createOrEditLabel": "建立或編輯 Customer Category"
+            },
+            "delete": {
+                "question": "您確定要刪除 Customer Category {{ id }} 嗎?"
+            },
+            "detail": {
+                "title": "Customer Category"
+            },
+            "code": "Code",
+            "name": "Name",
+            "tradingName": "Trading Name"
+        }
+    },
+    "customerServiceApp": {
+        "customerCategory" : {
+            "created": "新的 Customer Category 建立成功，識別碼為 {{ param }}",
+            "updated": "識別碼為 {{ param }} 的 Customer Category 更新成功",
+            "deleted": "識別碼為 {{ param }} 的 Customer Category 刪除成功"
+        }
+    }
+}
