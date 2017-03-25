@@ -10,6 +10,7 @@ node {
     }
 
     stage('clean') {
+        sh "cd customerService"
         sh "chmod +x mvnw"
         sh "./mvnw clean"
     }
