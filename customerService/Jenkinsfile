@@ -10,10 +10,10 @@ node {
     }
 
     stage('clean') {
-        sh "cd customerService"
-        sh "ls -a"
-        sh "chmod +x customerService/mvnw"
-        sh "./customerService/mvnw clean"
+        sh "cd customerService && ls -a && chmod +x mvnw && ./mvnw clean"
+//        sh "ls -a"
+//        sh "chmod +x customerService/mvnw"
+//        sh "./customerService/mvnw clean"
     }
 
     stage('backend tests') {
