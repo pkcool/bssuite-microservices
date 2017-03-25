@@ -135,7 +135,20 @@ Run cleanup script
    
    `heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com"`
     
-
+   -----
+   for heroku clould, if the application is not started within 90s, db might be lock, to unlock, run:
+   
+   `heroku pg:psql -c "update databasechangeloglock set l
+   ocked=false;" --app bss-customer-svc`
+   
+   or re-do:
+   
+   `heroku config:set JHIPSTER_REGISTRY_URL="https://admin:[password]@[appname].herokuapp.com"`
+   
+   if doesn't work, redeploy the application manually from command line:
+   
+   `yo jhipster:heroku`
+   
 
 ## TODO
 - Switch between dev and prod ~~with an environment variable~~ different compose files.
