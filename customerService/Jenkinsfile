@@ -12,8 +12,8 @@ node {
     stage('clean') {
         sh "cd customerService"
         sh "ls -a"
-        sh "chmod +x mvnw"
-        sh "./mvnw clean"
+        sh "chmod +x customerService/mvnw"
+        sh "./customerService/mvnw clean"
     }
 
     stage('backend tests') {
