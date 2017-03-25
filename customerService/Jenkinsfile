@@ -13,8 +13,8 @@ node {
         dir('customerService') {
             sh "pwd"
             sh "ls -a"
-            sh "chmod +x customerService/mvnw"
-            sh "./customerService/mvnw clean"
+            sh "chmod +x mvnw"
+            sh "./mvnw clean"
         }
 
     }
@@ -22,7 +22,7 @@ node {
     stage('backend tests') {
         try {
             dir('customerService') {
-                sh "cd customerService && ./mvnw test"
+                sh "./mvnw test"
             }
         } catch (err) {
             throw err
