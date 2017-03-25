@@ -18,8 +18,7 @@ node {
 
     stage('backend tests') {
         try {
-            sh "cd customerService"
-            sh "./mvnw test"
+            sh "cd customerService && ./mvnw test"
         } catch(err) {
             throw err
         } finally {
