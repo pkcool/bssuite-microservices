@@ -11,12 +11,14 @@ node {
 
     stage('clean') {
         sh "cd customerService"
+        sh "ls -a"
         sh "chmod +x mvnw"
         sh "./mvnw clean"
     }
 
     stage('backend tests') {
         try {
+            sh "cd customerService"
             sh "./mvnw test"
         } catch(err) {
             throw err
@@ -26,6 +28,7 @@ node {
     }
 
     stage('package and deploy') {
+        sh "cd customerService"
         sh "./mvnw com.heroku.sdk:heroku-maven-plugin:1.1.1:deploy-war -DskipTests -Pprod -Dheroku.appName="
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
