@@ -10,16 +10,21 @@ node {
     }
 
     stage('clean') {
-        sh "cd customerService && ls -a && chmod +x mvnw && ./mvnw clean"
-//        sh "ls -a"
-//        sh "chmod +x customerService/mvnw"
-//        sh "./customerService/mvnw clean"
+        dir('customerService') {
+            sh "pwd"
+            sh "ls -a"
+            sh "chmod +x customerService/mvnw"
+            sh "./customerService/mvnw clean"
+        }
+
     }
 
     stage('backend tests') {
         try {
-            sh "cd customerService && ./mvnw test"
-        } catch(err) {
+            dir('customerService') {
+                sh "cd customerService && ./mvnw test"
+            }
+        } catch (err) {
             throw err
         } finally {
             junit '**/target/surefire-reports/TEST-*.xml'
@@ -27,8 +32,7 @@ node {
     }
 
     stage('package and deploy') {
-        sh "cd customerService"
-        sh "./mvnw com.heroku.sdk:heroku-maven-plugin:1.1.1:deploy-war -DskipTests -Pprod -Dheroku.appName="
+        sh "cd customerService && ./mvnw com.heroku.sdk:heroku-maven-plugin:1.1.1:deploy-war -DskipTests -Pprod -Dheroku.appName="
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
