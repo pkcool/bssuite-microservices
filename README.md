@@ -149,6 +149,11 @@ Run cleanup script
    
    `yo jhipster:heroku`
    
+   
+## Troubleshooting
+- git error msg in service/gateway projects
+.git folder will be created when running yo jhipster:heroku or other generator inside services/gateways,
+need to remove .git folder under services/gateways.
 
 ## TODO
 - Switch between dev and prod ~~with an environment variable~~ different compose files.
