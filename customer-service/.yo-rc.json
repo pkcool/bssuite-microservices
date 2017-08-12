@@ -1,38 +1,42 @@
 {
-  "generator-jhipster": {
-    "jhipsterVersion": "4.6.2",
-    "baseName": "customer-service",
-    "packageName": "com.bssuite",
-    "packageFolder": "com/bssuite",
-    "serverPort": "8081",
-    "authenticationType": "jwt",
-    "hibernateCache": "hazelcast",
-    "clusteredHttpSession": false,
-    "websocket": false,
-    "databaseType": "sql",
-    "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "postgresql",
-    "searchEngine": false,
-    "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
-    "buildTool": "maven",
-    "enableSocialSignIn": false,
-    "jwtSecretKey": "eb811243b167c8c4dc4bc7ad1fa464ac80a4dcca",
-    "enableTranslation": true,
-    "applicationType": "microservice",
-    "testFrameworks": [
-      "gatling",
-      "cucumber"
-    ],
-    "jhiPrefix": "jhi",
-    "skipClient": true,
-    "skipUserManagement": true,
-    "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "zh-cn",
-      "zh-tw"
-    ],
-    "clientPackageManager": "yarn"
-  }
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.bssuite",
+            "nativeLanguage": "en"
+        },
+        "jhipsterVersion": "4.6.2",
+        "baseName": "customerService",
+        "packageName": "com.bssuite",
+        "packageFolder": "com/bssuite",
+        "serverPort": "8081",
+        "authenticationType": "jwt",
+        "hibernateCache": "ehcache",
+        "clusteredHttpSession": false,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSocialSignIn": false,
+        "jwtSecretKey": "cacef42b3f4ecb22d825db526c8e9a9bc0065ee7",
+        "enableTranslation": true,
+        "applicationType": "microservice",
+        "testFrameworks": [
+            "gatling",
+            "cucumber"
+        ],
+        "jhiPrefix": "jhi",
+        "skipClient": true,
+        "skipUserManagement": true,
+        "nativeLanguage": "en",
+        "languages": [
+            "en",
+            "zh-cn",
+            "zh-tw"
+        ],
+        "clientPackageManager": "yarn"
+    }
 }
