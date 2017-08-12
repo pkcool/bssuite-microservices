@@ -2,7 +2,7 @@
 
 # Generate entities in front end gateway
 
-cd gateway
+cd ../gateway
 
 entities=("Customer" 
 "CustomerCategory" 

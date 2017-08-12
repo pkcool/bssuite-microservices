@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.bssuite</groupId>
-    <artifactId>bssuitemicroservices</artifactId>
+    <artifactId>bssuite-microservices</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>Business Solution Suite Microservices</name>
@@ -16,5 +16,7 @@
         <module>../invoice-service</module>
         <module>../product-service</module>
         <module>../supplier-service</module>
+
+        <module>../devops-scripts</module>
     </modules>
 </project>
