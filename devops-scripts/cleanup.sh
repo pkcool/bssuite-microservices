@@ -33,3 +33,5 @@ for app in "${apps[@]}";
 do
     ( cd ../$app && rm -r .DS_STORE && rm -r .editorconfig && rm -r .gitattributes )
 done
+
+cd ../root-module && rm -r !(pom.xml | .gitignore)
