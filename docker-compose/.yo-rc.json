@@ -1,11 +1,11 @@
 {
   "generator-jhipster": {
     "appsFolders": [
-      "customerService",
+      "customer-service",
       "gateway",
-      "invoiceService",
-      "productService",
-      "supplierService"
+      "invoice-service",
+      "product-service",
+      "supplier-service"
     ],
     "directoryPath": "../",
     "monitoring": "elk",

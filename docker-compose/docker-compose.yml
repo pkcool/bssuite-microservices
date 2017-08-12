@@ -5,13 +5,13 @@ services:
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://customerservice-postgresql:5432/customerService
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://customerservice-postgresql:5432/customer-service
             - JHIPSTER_SLEEP=10
             - JHIPSTER_REGISTRY_PASSWORD=admin
     customerservice-postgresql:
         image: postgres:9.5.4
         environment:
-            - POSTGRES_USER=customerService
+            - POSTGRES_USER=customer-service
             - POSTGRES_PASSWORD=
     
     bssuitegateway-app:
@@ -52,13 +52,13 @@ services:
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/productService
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/product-service
             - JHIPSTER_SLEEP=10
             - JHIPSTER_REGISTRY_PASSWORD=admin
     productservice-postgresql:
         image: postgres:9.5.4
         environment:
-            - POSTGRES_USER=productService
+            - POSTGRES_USER=product-service
             - POSTGRES_PASSWORD=
     
     supplierservice-app:
@@ -66,13 +66,13 @@ services:
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://supplierservice-postgresql:5432/supplierService
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://supplierservice-postgresql:5432/supplier-service
             - JHIPSTER_SLEEP=10
             - JHIPSTER_REGISTRY_PASSWORD=admin
     supplierservice-postgresql:
         image: postgres:9.5.4
         environment:
-            - POSTGRES_USER=supplierService
+            - POSTGRES_USER=supplier-service
             - POSTGRES_PASSWORD=
     
     jhipster-registry:

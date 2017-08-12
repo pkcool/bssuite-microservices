@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "4.6.2",
-    "baseName": "bssuiteGateway",
+    "baseName": "bssuite-gateway",
     "packageName": "com.bssuite",
     "packageFolder": "com/bssuite",
     "serverPort": "8080",

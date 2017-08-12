@@ -8,13 +8,13 @@
     <artifactId>bssuitemicroservices</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Business Solution Suite Microservices Docker</name>
+    <name>Business Solution Suite Microservices</name>
 
     <modules>
-        <module>gateway</module>
-        <module>customerService</module>
-        <module>invoiceService</module>
-        <module>productService</module>
-        <module>supplierService</module>
+        <module>../gateway</module>
+        <module>../customer-service</module>
+        <module>../invoice-service</module>
+        <module>../product-service</module>
+        <module>../supplier-service</module>
     </modules>
 </project>

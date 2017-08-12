@@ -1,10 +1,10 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "4.6.2",
-    "baseName": "supplierService",
+    "baseName": "customer-service",
     "packageName": "com.bssuite",
     "packageFolder": "com/bssuite",
-    "serverPort": "8082",
+    "serverPort": "8081",
     "authenticationType": "jwt",
     "hibernateCache": "hazelcast",
     "clusteredHttpSession": false,
@@ -17,7 +17,7 @@
     "serviceDiscoveryType": "eureka",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "6cc1de9bcfb0cb64504ddab4c113442317c4d699",
+    "jwtSecretKey": "eb811243b167c8c4dc4bc7ad1fa464ac80a4dcca",
     "enableTranslation": true,
     "applicationType": "microservice",
     "testFrameworks": [

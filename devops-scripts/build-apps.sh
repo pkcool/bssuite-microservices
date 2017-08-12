@@ -4,13 +4,13 @@
 
 
 apps=("gateway" 
-"customerService" 
-"supplierService" 
-"productService" 
-"invoiceService")
+"customer-service"
+"supplier-service"
+"product-service"
+"invoice-service")
 for app in "${apps[@]}";
 do
-    ( cd $app && mvn clean package -Pprod docker:build -DskipTests ) 
+    ( cd ../$app && mvn clean package -Pprod docker:build -DskipTests )
 done
 
 wait;

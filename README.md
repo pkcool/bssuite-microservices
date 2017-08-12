@@ -8,7 +8,7 @@ a cloud ERP system based on microservice architecture and docker.
 It allows you to run:
 - The registry
 - An API Gateway
-- Several microservices (customerService, supplierService, etc.) based on different databases.
+- Several microservices (customer-service, supplier-service, etc.) based on different databases.
 - The ELK stack (Elasticsearch, Logstash, Kibana) for log centralization
 - _(future) Graphite/Grafana for metrics centralization_
 
@@ -16,7 +16,7 @@ It allows you to run:
 
 It provides:
 - Scripts to setup the apps
-- `.yo-rc.json` files in customerService, supplierService, invoiceService, productService directory that will be used to generate apps
+- `.yo-rc.json` files in customer-service, supplier-service, invoice-service, product-service directory that will be used to generate apps
 - A `central-server-config/` directory that can be used to edit the registry's config server configuration but _only in dev profile_ (a git repository is used in prod profile)
 
 It depends on [generator-jhipster-docker-compose](https://github.com/jhipster/generator-jhipster-docker-compose) to generate a global docker-compose file.
@@ -86,17 +86,17 @@ It should connect with the registry and show up in the Eureka console.
 
 Also logs should have started to show up in Kibana.
 
-Start customerService with:
-- `docker-compose up -d customerService`
+Start customer-service with:
+- `docker-compose up -d customer-service`
 
 Start the other apps:
-- `docker-compose up -d supplierService invoiceService`
+- `docker-compose up -d supplier-service invoice-service`
 
 #### Scale your apps
 
 You can scale an app by creating **multiple instances** of it (doesn't work on the gateway or other apps that have their ports binded to localhost):
-- `docker-compose scale customerService=2`
-- `docker-compose scale supplierService=3`
+- `docker-compose scale customer-service=2`
+- `docker-compose scale supplier-service=3`
 
 Then wait for them to show up at `http://localhost:8761/` and `http://localhost:8080/#/gateway`.
 
@@ -129,7 +129,7 @@ Run cleanup script
     
    Do the same for all the services, i.e.
    
-   `cd customerService`
+   `cd customer-service`
        
    `yo jhipster:heroku`
    

@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
     "jhipsterVersion": "4.6.2",
-    "baseName": "invoiceService",
+    "baseName": "invoice-service",
     "packageName": "com.bssuite",
     "packageFolder": "com/bssuite",
     "serverPort": "8084",
