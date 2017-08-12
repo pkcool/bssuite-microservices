@@ -10,7 +10,7 @@
     "packageFolder": "com/bssuite",
     "serverPort": "8082",
     "authenticationType": "jwt",
-    "hibernateCache": "ehcache",
+    "hibernateCache": "hazelcast",
     "clusteredHttpSession": false,
     "websocket": false,
     "databaseType": "sql",
