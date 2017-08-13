@@ -4,7 +4,7 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.bssuite</groupId>
+    <groupId>com.bssuite</groupId>
     <artifactId>bssuite-microservices</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
@@ -18,5 +18,6 @@
         <module>../supplier-service</module>
 
         <module>../devops-scripts</module>
+        <module>../docker-compose</module>
     </modules>
 </project>

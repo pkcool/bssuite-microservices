@@ -24,7 +24,8 @@ It depends on [generator-jhipster-docker-compose](https://github.com/jhipster/ge
 ## How to test
 
 ### Setup and build
-First, generate all apps from their _.yo-rc.json_.
+First, generate all apps from their _.yo-rc.json_. 
+(Run the command from devops-scripts directory)
 
     ./setup-apps.sh
     
@@ -154,6 +155,22 @@ Run cleanup script
 - git error msg in service/gateway projects
 .git folder will be created when running yo jhipster:heroku or other generator inside services/gateways,
 need to remove .git folder under services/gateways.
+
+## Setup Intellij
+- After code is generated (setup_apps.sh, setup_entities.sh), import the pom file in root-module.
+This is the parent module that will load all the child modules (i.e. customer service, gateway etc.)
+
+## Manual Code Analysis with Sonar Cloud
+- Set up account in Sonar cloud, linked to github account. following the instructions:
+https://about.sonarcloud.io/get-started/
+- Run analysis:
+mvn sonar:sonar \
+    -Dsonar.host.url=https://sonarcloud.io \
+    -Dsonar.organization=your_organization_key \
+    -Dsonar.login=abcdef0123456789
+
+For sonar.organization and sonar.login, use the organization key and the generated token from the sonar cloud my account area.
+
 
 ## TODO
 - Switch between dev and prod ~~with an environment variable~~ different compose files.

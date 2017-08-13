@@ -9,11 +9,10 @@
         <relativePath>../root-module</relativePath>
     </parent>
 
-    <groupId>com.bssuite</groupId>
-    <artifactId>devops-scripts</artifactId>
+    <artifactId>full-app-docker-compose</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>DevOps Scripts</name>
+    <name>Full Application Docker Compose</name>
 
 
 </project>
