@@ -5,9 +5,6 @@ node {
         checkout scm
     }
 
-    stage('check java') {
-        sh "java -version"
-    }
 
     stage('clean') {
         dir('customerService') {
