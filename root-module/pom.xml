@@ -19,5 +19,6 @@
 
         <module>../devops-scripts</module>
         <module>../docker-compose</module>
+        <module>../docs</module>
     </modules>
 </project>

@@ -10,15 +10,34 @@ java -jar jenkins.war --httpPort=9000
 
 Browse to http://localhost:9000/ to install Jenkins
 
-Create a pipeline for each service or gateway
+Create a pipeline for each service and gateway
+
+# Jenkins cloud
+Create a Jenkins instance in the cloud, 
+i.e. aws / azure / google compute engine
+An option would be to use Bitnami Jenkins to deploy the jenkins to the instance.
+
+Create a pipeline for each service and gateway.
+i.e. one pipeline for customer service,
+one pipeline for supplier service.
+in each pipeline, only build and test the corresponding service.
+to do so, in Jenkins file, use dir () block get into the folder.
+i.e. for customer service, to do 'clean'
+
+    stage('clean') {
+        dir('customerService') {
+            sh "pwd"
+            sh "ls -a"
+            sh "chmod +x mvnw"
+            sh "./mvnw clean"
+        }
+
+    }
 
 
 
 
-
-
-
-###
+# Set up Jenkins with docker and heroku tool installation
 1. Start Jenkins using docker image
 2. Install Heroku CLI in the jenkins docker container
     By default, root is disabled for jenkins container, we could either create a custom docker image on top of the official jenkins image,
