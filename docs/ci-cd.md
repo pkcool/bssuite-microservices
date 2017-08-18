@@ -34,6 +34,24 @@ i.e. for customer service, to do 'clean'
 
     }
 
+#Setup Jenkins on Google compute engine
+From Google Cloud Platform, Use Google Deployment Management to install Jenkins image (Created by Google, not Bitnami)
+Jenkins should be started automatically.
+SSH into the server and install Git (apt-get install git) and JDK (https://www.mkyong.com/java/how-to-install-oracle-jdk-8-on-debian/)
+
+Setting the JAVA_HOME Environment Variable
+sudo nano /etc/environment
+In this file, add the following line, making sure to replace the highlighted path with your own copied path.
+
+/etc/environment
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+Save and exit the file, and reload it.
+
+source /etc/environment
+You can now test whether the environment variable has been set by executing the following command:
+
+echo $JAVA_HOME
+This will return the path you just set.
 
 
 
