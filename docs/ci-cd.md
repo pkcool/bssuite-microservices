@@ -53,6 +53,31 @@ You can now test whether the environment variable has been set by executing the 
 echo $JAVA_HOME
 This will return the path you just set.
 
+## Setup Heroku for CD
+install Heroku CLI following the instructions on the office web.
+and login
+
+    heroku login
+
+After login, get api key
+
+    heroku auth:token
+    
+copy the api key, and set the environment variable HEROKU_API_KEY
+
+    sudo vim /etc/environment
+    
+Add a line to the environment file
+
+    HEROKU_API_KEY="{apikey}"
+replace the {apikey} with the real api key.
+
+    source /etc/environment
+   
+then reboot the machine or reboot jenkins.
+
+audo deployment should work for heroku after these settings.
+
 
 
 # Set up Jenkins with docker and heroku tool installation
