@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.bssuite",
-      "nativeLanguage": "en"
+      "nativeLanguage": "en",
+      "microservicePath": "../customer-service"
     },
     "jhipsterVersion": "4.7.0",
     "baseName": "bssuiteGateway",
