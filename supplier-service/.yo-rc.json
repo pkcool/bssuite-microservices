@@ -1,10 +1,10 @@
 {
   "generator-jhipster": {
-      "promptValues": {
-          "packageName": "com.bssuite",
-          "nativeLanguage": "en"
-      },
-    "jhipsterVersion": "4.6.2",
+    "promptValues": {
+      "packageName": "com.bssuite",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.7.0",
     "baseName": "supplierService",
     "packageName": "com.bssuite",
     "packageFolder": "com/bssuite",
