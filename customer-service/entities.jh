@@ -38,4 +38,4 @@ dto * with mapstruct
 
 service * with serviceClass
 
-microservice Customer, CustomerCategory with customer-service
+microservice Customer, CustomerCategory with customerservice
