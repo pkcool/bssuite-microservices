@@ -1,0 +1,11 @@
+version: '2'
+services:
+    supplierservice-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/supplierService/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=supplierService
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
