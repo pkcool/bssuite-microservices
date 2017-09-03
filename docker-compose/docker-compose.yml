@@ -4,29 +4,30 @@ services:
         image: customerservice
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://customerservice-postgresql:5432/customer-service
-            - JHIPSTER_SLEEP=10
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://customerservice-postgresql:5432/customerService
+            - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
     customerservice-postgresql:
-        image: postgres:9.5.4
+        image: postgres:9.6.2
         environment:
-            - POSTGRES_USER=customer-service
+            - POSTGRES_USER=customerService
             - POSTGRES_PASSWORD=
     
     bssuitegateway-app:
         image: bssuitegateway
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
             - SPRING_DATASOURCE_URL=jdbc:postgresql://bssuitegateway-postgresql:5432/bssuiteGateway
-            - SPRING_DATA_CASSANDRA_CONTACTPOINTS=bssuitegateway-cassandra
             - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
         ports:
             - 8080:8080
     bssuitegateway-postgresql:
-        image: postgres:9.5.4
+        image: postgres:9.6.2
         environment:
             - POSTGRES_USER=bssuiteGateway
             - POSTGRES_PASSWORD=
@@ -35,44 +36,48 @@ services:
         image: invoiceservice
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
             - SPRING_DATASOURCE_URL=jdbc:mysql://invoiceservice-mysql:3306/invoiceservice?useUnicode=true&characterEncoding=utf8&useSSL=false
-            - JHIPSTER_SLEEP=10
+            - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
     invoiceservice-mysql:
-        image: mysql:5.7.13
+        image: mysql:5.7.18
         environment:
             - MYSQL_USER=root
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
             - MYSQL_DATABASE=invoiceservice
-        command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+        command:             mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
+            --explicit_defaults_for_timestamp
     
     productservice-app:
         image: productservice
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/product-service
-            - JHIPSTER_SLEEP=10
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://productservice-postgresql:5432/productService
+            - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
     productservice-postgresql:
-        image: postgres:9.5.4
+        image: postgres:9.6.2
         environment:
-            - POSTGRES_USER=product-service
+            - POSTGRES_USER=productService
             - POSTGRES_PASSWORD=
     
     supplierservice-app:
         image: supplierservice
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://supplierservice-postgresql:5432/supplier-service
-            - JHIPSTER_SLEEP=10
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://supplierservice-postgresql:5432/supplierService
+            - JHIPSTER_SLEEP=30
             - JHIPSTER_REGISTRY_PASSWORD=admin
     supplierservice-postgresql:
-        image: postgres:9.5.4
+        image: postgres:9.6.2
         environment:
-            - POSTGRES_USER=supplier-service
+            - POSTGRES_USER=supplierService
             - POSTGRES_PASSWORD=
     
     jhipster-registry:
@@ -86,10 +91,19 @@ services:
             service: jhipster-elasticsearch
     jhipster-logstash:
         extends:
-          file: jhipster-console.yml
-          service: jhipster-logstash
+            file: jhipster-console.yml
+            service: jhipster-logstash
+        depends_on:
+            - jhipster-elasticsearch
     jhipster-console:
         extends:
             file: jhipster-console.yml
             service: jhipster-console
-
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-import-dashboards:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-import-dashboards
+        depends_on:
+            - jhipster-elasticsearch
