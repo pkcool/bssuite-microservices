@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tradingName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "abn",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170903150612",
+    "entityTableName": "customer",
+    "jpaMetamodelFiltering": true,
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "microserviceName": "customerservice"
+}

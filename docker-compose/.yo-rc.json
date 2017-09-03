@@ -8,7 +8,7 @@
       "supplier-service"
     ],
     "directoryPath": "../",
-    "monitoring": "elk",
+    "monitoring": "no",
     "serviceDiscoveryType": "eureka",
     "adminPassword": "admin",
     "jwtSecretKey": "5ebe8fabe94f4aee220f06184e62b800a7d3a5f1",

@@ -36,6 +36,6 @@ paginate Customer, CustomerCategory with pagination
 
 dto * with mapstruct
 
-service * with serviceClass
+service * with serviceImpl
 
-microservice Customer, CustomerCategory with customer-service
+microservice Customer, CustomerCategory with customerservice
