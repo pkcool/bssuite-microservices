@@ -25,7 +25,7 @@ to do so, in Jenkins file, use dir () block get into the folder.
 i.e. for customer service, to do 'clean'
 
     stage('clean') {
-        dir('customerService') {
+        dir('customer-service') {
             sh "pwd"
             sh "ls -a"
             sh "chmod +x mvnw"
@@ -33,6 +33,7 @@ i.e. for customer service, to do 'clean'
         }
 
     }
+
 
 #Setup Jenkins on Google compute engine
 From Google Cloud Platform, Use Google Deployment Management to install Jenkins image (Created by Google, not Bitnami)
@@ -77,6 +78,17 @@ replace the {apikey} with the real api key.
 then reboot the machine or reboot jenkins.
 
 audo deployment should work for heroku after these settings.
+
+
+# Deploy to Heoku from Jenkins pipeline
+
+        stage('package and deploy') {
+            dir('customer-service') {
+                sh "./mvnw com.heroku.sdk:heroku-maven-plugin:1.1.1:deploy -DskipTests -Pprod -Dheroku.appName=bss-customer-svc"
+            }
+        }
+
+"appName" is the app name on Heroku. if no app on heroku with name, create an empty app with the name on Heroku first.
 
 
 
