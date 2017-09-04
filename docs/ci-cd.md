@@ -100,3 +100,19 @@ audo deployment should work for heroku after these settings.
         Email: e*m*@example.com
         Password (typing will be hidden):
         Authentication successful.
+        
+        
+        
+# Code analysis with Sonar locally
+1. start Sonar server locally using docker compose (going to service/gateway directory)
+    
+        cd customer-service
+        docker-compose -f src/main/docker/sonar.yml up
+    
+2. Analyze the code
+        
+        ./mvnw sonar:sonar
+        
+3. The Sonar reports will be available at: http://localhost:9000
+
+
