@@ -10,7 +10,7 @@ node {
     }
 
     stage('clean') {
-        dir('customerService') {
+        dir('customer-service') {
             sh "chmod +x mvnw"
             sh "./mvnw clean"
         }
@@ -18,7 +18,7 @@ node {
 
     stage('backend tests') {
         try {
-            dir('customerService') {
+            dir('customer-service') {
                 sh "./mvnw test"
             }
         } catch(err) {
@@ -29,7 +29,7 @@ node {
     }
 
     stage('package and deploy') {
-        dir('customerService') {
+        dir('customer-service') {
             sh "./mvnw com.heroku.sdk:heroku-maven-plugin:1.1.1:deploy -DskipTests -Pprod -Dheroku.appName=bss-customer-svc"
         }
 //        archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
