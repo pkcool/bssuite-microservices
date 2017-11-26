@@ -38,7 +38,7 @@ Then, generate entities for front end gateway. This step needs to be done manual
 
     ./setup-gateway-entities.sh
 
-Finally, build apps and generate docker images for them.  `mvn package docker:build -DskipTests=true`
+Finally, build apps and generate docker images for them (NOTE: start docker before running the build script).  `mvn package docker:build -DskipTests=true`
 
     ./build-apps.sh
     
