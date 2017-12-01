@@ -54,6 +54,10 @@ You can now test whether the environment variable has been set by executing the 
 echo $JAVA_HOME
 This will return the path you just set.
 
+Install bzip2 (may required)
+sudo apt-get update
+sudo apt-get install bzip2
+
 ## Setup Heroku for CD
 install Heroku CLI following the instructions on the office web.
 and login
